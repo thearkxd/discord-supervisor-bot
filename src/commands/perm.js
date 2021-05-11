@@ -84,7 +84,7 @@ module.exports = {
         member.roles.remove(data.roles);
         message.channel.send(embed.setDescription(`${member.toString()} üyesinden ${data.roles.length > 1 ? data.roles.slice(0, -1).map(x => `<@&${x}>`).join(", ") + " ve " + data.roles.map(x => `<@&${x}>`).slice(-1) : data.roles.map(x => `<@&${x}>`).join("")} rolü alındı!`));
       } else if (["liste", "list"].includes(args[0])) {
-        if (!conf.registration.roles.some((x) => message.member.roles.cache.has(x))) return message.channel.error(message, "Yeterli yetkin bulunmuyor!");
+        if (!conf.registration.staffs.some((x) => message.member.roles.cache.has(x))) return message.channel.error(message, "Yeterli yetkin bulunmuyor!");
         let data = await perms.find({ guildID: message.guild.id });
         if (!data.length) return message.channel.error(message, "Bu sunucuda yetki eklenmemiş!");
         data = data.map((x, i) => `\`${i+1}.\` Yetki ismi: \`${x.name}\`, Verilecek roller: ${x.roles ? x.roles.map((r) => `<@&${r}>`).join(", ") : "Bulunmuyor!"}, Kullanabilecek roller: ${x.canUses ? x.canUses.map((r) => `<@&${r}>`).join(", ") : "Bulunmuyor!"}`).join("\n");
@@ -94,7 +94,7 @@ module.exports = {
         }
         if (data.length > 0) message.channel.send(embed.setDescription(data));
       } else if (["bilgi", "info"].includes(args[0])) {
-        if (!conf.registration.roles.some((x) => message.member.roles.cache.has(x))) return message.channel.error(message, "Yeterli yetkin bulunmuyor!");
+        if (!conf.registration.staffs.some((x) => message.member.roles.cache.has(x))) return message.channel.error(message, "Yeterli yetkin bulunmuyor!");
         const name = args[1];
         if (!name) return message.channel.error(message, "Bir yetki ismi belirtmelisin!");
         const data = await perms.findOne({ guildID: message.guild.id, name });
