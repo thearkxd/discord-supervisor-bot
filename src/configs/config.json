@@ -1,0 +1,30 @@
+{
+  "guildID": "",
+  "publicParent": "",
+  "sleepRoom": "",
+  "taglıAlım": false,
+  "chat": "",
+  "teams": [],
+  "specialRoles": { "vip": "" },
+  "registration": {
+    "channel": "",
+    "brace": " | ",
+    "staffs": [],
+    "manRoles": [],
+    "womanRoles": [],
+    "unregRoles": []
+  },
+  "tag": {
+    "role": "",
+    "log": "",
+    "tag": "",
+    "tag2": "•"
+  },
+  "jail": {
+    "channel": "",
+    "roles": []
+  },
+  "invite": {
+    "channel": ""
+  }
+}
