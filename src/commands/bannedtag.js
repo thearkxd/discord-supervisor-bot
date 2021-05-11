@@ -49,9 +49,8 @@ Jail Sebebi: \`Kullanıcı adında yasaklı tag (${args[1]}) bulundurmak.\`
       });
     } else if (["sil", "remove"].includes(args[0])) {
       if (!args[1]) return message.channel.error(message, "Bir tag giriniz!");
-      const index = data.tags.findIndex((x) => x.tag === args[1]);
-      if (index === -1) return message.channel.send(`Sunucunun yasaklı tagları arasında ${args[1]} tagı bulunmuyor!`);
-      data.tags.splice(index, 1);
+      if (!data.tags.includes(args[1])) return message.channel.send(`Sunucunun yasaklı tagları arasında ${args[1]} tagı bulunmuyor!`);
+      data.tags = data.tags.filter((x) => !x.includes(args[1]));
       data.save();
       const filtered = message.guild.members.cache.filter((x) => x.user.username.includes(args[1]) && conf.jail.roles.some((a) => x.roles.cache.has(a)));
       message.channel.send(embed.setDescription(`Başarıyla ${args[1]} tagı yasaklı taglar arasından kaldırıldı ve ${filtered.size} kişi kayıtsıza atıldı!`));
@@ -82,7 +81,7 @@ Jailin Kaldırılma Tarihi: \`${moment(Date.now()).format("LLL")}\`
       message.channel.send(embed.setDescription(`
 \`${message.guild.name}\` sunucusunun yasaklı tagları;
 ${data.tags.map((x) => `\`${x}\``).join(", ")}
-Toplam ${filtered.size} kişide ${data.tags.length > 1 ? data.tags.slice(0, -1).map(x => `<@&${x}>`).join(", ") + " veya " + data.tags.map(x => `<@&${x}>`).slice(-1) : data.tags.map(x => `<@&${x}>`).join("")} tagları bulunuyor!
+Toplam ${filtered.size} kişide ${data.tags.length > 1 ? data.tags.slice(0, -1).map(x => x).join(", ") + " veya " + data.tags.map(x => x).slice(-1) : data.tags.map(x => x).join("")} tagları bulunuyor!
       `));
     }
   },
