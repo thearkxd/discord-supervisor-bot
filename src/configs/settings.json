@@ -1,6 +1,6 @@
 {
   "token": "",
   "prefix": [],
-  "mongoUrl": "mongodb+srv://Theark:U4Xt1RXgrilwF2TP@cluster0.3hs7l.mongodb.net/AllBots?retryWrites=true&w=majority",
-  "owners": ["350976460313329665"]
+  "mongoUrl": "",
+  "owners": []
 }
