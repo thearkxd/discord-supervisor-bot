@@ -7,8 +7,7 @@
     "start": "node ."
   },
   "dependencies": {
-    "ark.db": "^2.1.0",
-    "canvas": "^2.7.0",
+    "ark.db": "^2.2.0",
     "cron": "^1.8.2",
     "discord.js": "^12.5.1",
     "moment": "^2.29.1",
