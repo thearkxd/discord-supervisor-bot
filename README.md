@@ -14,7 +14,7 @@
 Tada 🎉. Artık supervisor botun hazır. Dilediğin gibi kullanabilirsin.
 
 # Not
-Bu bot, paylaşmış olduğum [moderasyon botu](https://github.com/thearkxd/discord-moderation-bot) ile tam uyumlu çalışmaktadır. Eğer farklı bir moderasyon botu kullanıyorsanız, botu kendinize göre özelleştirebilir, ya da ceza işlemlerini silebilirsiniz.
+Bu bot, paylaşmış olduğum [moderasyon](https://github.com/thearkxd/discord-moderation-bot) ve [gelişmiş stat](https://github.com/thearkxd/discord-advanced-stat-bot) botları ile tam uyumlu çalışmaktadır. Eğer farklı bir moderasyon ya da stat botu kullanıyorsanız, botu kendinize göre özelleştirebilir, ya da ceza, görev ve coin işlemlerini silebilirsiniz.
 
 # Özellikler
 1. Yasaklı tag sistemi.

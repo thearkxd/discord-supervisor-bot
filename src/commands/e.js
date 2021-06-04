@@ -53,5 +53,6 @@ ${data ? data.names.splice(0, 10).map((x, i) => `\`${i + 1}.\` \`${x.name}\` (${
 
     await regstats.findOneAndUpdate({ guildID: message.guild.id, userID: message.author.id }, { $inc: { top: 1, topGuild24: 1, topGuild7: 1, top24: 1, top7: 1, top14: 1, erkek: 1, erkek24: 1, erkek7: 1, erkek14: 1, }, }, { upsert: true });
     message.guild.channels.cache.get(conf.chat).send(`${member.toString()} aramıza katıldı!`);
+    message.member.updateTask(message.guild.id, "kayıt", 1, message.channel);
   },
 };

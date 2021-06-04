@@ -26,5 +26,8 @@
   },
   "invite": {
     "channel": ""
+  },
+  "emojis": {
+    "coin": ""
   }
 }
