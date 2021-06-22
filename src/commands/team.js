@@ -16,8 +16,8 @@ module.exports = {
 
   run: (client, message, args, embed, prefix) => {
     if (!teams || !teams.length) return message.channel.error(message, "Bu sunucuda ekip ya da ekip rolü bulunmuyor!");
-    if (teams.some(x => teams.indexOf(x) + 1 === args[0])) {
-      const team = teams.find(x => teams.indexOf(x) + 1 === args[0]);
+    if (teams.some(x => teams.indexOf(x) + 1 === parseInt(args[0]))) {
+      const team = teams.find(x => teams.indexOf(x) + 1 === parseInt(args[0]));
       embed.setDescription(`
 <@&${team}> ekibinin sunucu içi durumu;
 
