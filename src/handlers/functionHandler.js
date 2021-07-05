@@ -1,12 +1,12 @@
 const { GuildMember, TextChannel, MessageEmbed, Guild } = require("discord.js");
-const { numEmojis } = require("../configs/emojis.json");
+const { numEmojis, coin: coinEmoji } = require("../configs/emojis.json");
 const conf = require("../configs/config.json");
 const penals = require("../schemas/penals");
 const task = require("../schemas/task");
 const coin = require("../schemas/coin");
 
 /**
- * @param { Client } client
+ * @param {Client} client
  */
 module.exports = async (client) => {
   /**
@@ -53,7 +53,7 @@ module.exports = async (client) => {
 				${this.toString()} Tebrikler! ${type.charAt(0).toLocaleUpperCase() + type.slice(1)} görevini başarıyla tamamladın.
 				
 				${x.message}
-				${emojis.coin} \`${x.prizeCount} coin kazandın!\`
+				${coinEmoji} \`${x.prizeCount} coin kazandın!\`
 				`));
       }
       await x.save();

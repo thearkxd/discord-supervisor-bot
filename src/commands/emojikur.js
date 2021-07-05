@@ -22,6 +22,7 @@ module.exports = {
       { name: "star", url: "https://cdn.discordapp.com/attachments/827439712834158622/827439871505072178/star.gif" },
       { name: "red", url: "https://cdn.discordapp.com/attachments/827439712834158622/827439875170500629/red.gif" },
       { name: "green", url: "https://cdn.discordapp.com/attachments/827439712834158622/827439878664486913/green.gif" },
+      { name: "coin", url: "https://cdn.discordapp.com/attachments/827439712834158622/861702995371884634/coin.gif" }
     ];
 
     const numEmojis = [
